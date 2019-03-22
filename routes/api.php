@@ -17,4 +17,8 @@ Route::post('/login', 'API\AuthController@login');
 
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', 'API\AuthController@logout');
+    Route::get('/get-user', 'API\AuthController@getUser');
+
+    Route::get('/messages', 'API\ChatsController@fetchMessages');
+    Route::post('/messages', 'API\ChatsController@sendMessage');
 });
